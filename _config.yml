@@ -1,0 +1,54 @@
+# External Gems
+gems: 						[jekyll-paginate]
+
+
+# Site Settings
+title: 						"Coders Opinion"
+email: 						"info@codersopinion.com"
+description: 				"PHP, CSS, JS, XHTML"
+baseurl: 					""
+logourl: 					"/assets/img/bloglogo.jpg"
+fa-logo: 					"fa-bookmark-o"
+paginate: 					5
+
+
+# Author Settings
+author_name: 				"Robert-Jan de Dreu"
+author_url: 				"http://google.com"
+author_bio: 				"Hey, I'm Robert-Jan de Dreu. A programmer mostly focusing on the web. While using PHP and MVC I will make sure the program I'm building is well documented and structured. I use this blog to show what I made and keep reminding myself of little tasks that I have done and maybe need to do again.</p> <p>I live in Utrecht, The Netherlands and can be found in Ibuildings where my job is at. I'm available for freelancing if you want me to do a project for you. Just send me a message."
+author_email: 				"info@codersopinion.com"
+author_image: 				"/assets/img/author.png"
+
+
+# Social Settings
+twitter_url: 				"http://twitter.com/robertjandreu"
+facebook_url: 				""
+github_url:  				"http://github.com/rjd22"
+youtube_url:  				""
+dribbble_url:  				""
+googleplus_url: 			"https://plus.google.com/116038143890657202641"
+instagram_url:  			""
+pinterest_url:  			""
+linkedin_url:  				"http://linkedin.com/in/robertjandedreu"
+
+
+# Theme Settings
+theme_disqus_shortname: 	"codersopinion"
+theme_google_comments: 		false
+theme_analytics_id: 		""
+theme_reading_time: 		true
+theme_autoload_comments: 	false
+theme_always_show_nav: 		false
+
+
+# SASS Settings
+# DO NOT MODIFY
+sass:
+ sass_dir: "assets/css/"
+ style: :compressed
+
+
+# Build Settings
+markdown: 					kramdown
+permalink: 					pretty
+
