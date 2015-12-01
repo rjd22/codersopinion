@@ -115,7 +115,7 @@ First create a directory where all git repositories will be in. Mine is located 
 ## Edit your apache
 Now edit your httpd.conf to fit your settings:
 
-{% highlight conf %}
+{% highlight apache %}
 PerlLoadModule Apache::Redmine
 SetEnv GIT_PROJECT_ROOT /home/redmine/git_repositories/
 SetEnv GIT_HTTP_EXPORT_ALL
