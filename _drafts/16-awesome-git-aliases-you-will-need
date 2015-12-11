@@ -1,0 +1,27 @@
+---
+layout: post
+title: 16 awesome git aliases you will need
+permalink: /blog/16-awesome-git-aliases-you-will-need/
+date: 2015-12-11 14:02:00
+categories: Development Tools
+comments: true
+---
+
+[alias]
+        st = status -sb
+        revert = checkout
+        plog = log --graph --pretty='format:%C(red)%d%C(reset) %C(yellow)%h%C(reset) %ar %C(green)%aN%C(reset) %s'
+        tlog = log --stat --since='1 Day Ago' --graph --pretty=oneline --abbrev-commit --date=relative
+        rank = shortlog -sn --no-merges
+        co = checkout
+        cob = checkout -b
+        f = fetch -p
+        c = commit
+        a = add -p
+        p = push
+        ba = branch -a
+        bd = branch -d
+        bD = branch -D
+        dc = diff --cached
+        com = commit -am
+        lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
