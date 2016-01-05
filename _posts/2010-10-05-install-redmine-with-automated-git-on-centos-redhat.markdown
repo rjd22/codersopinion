@@ -7,7 +7,7 @@ categories: Development Tools
 comments: true
 ---
 
-I had a few days work on this one while it was supposed to be done in a hour. The problem? Lack of good documentation. There seems to be no complete tutorial on the Internet how to completely integrate git with Redmine so I figured to make one myself for you my dear reader but also a little bit for myself so I can easily find it back.</p>
+I had a few days work on this one while it was supposed to be done in a hour. The problem? Lack of good documentation. There seems to be no complete tutorial on the Internet how to completely integrate git with Redmine so I figured to make one myself for you my dear reader but also a little bit for myself so I can easily find it back.
 
 Good to know: I might have used yum but we all know that the repo's of centos en redhad are way behind in version. Please make sure you have extra repo's. I used:
 <a title="epel repo" href="http://fedoraproject.org/wiki/EPEL/FAQ#How_can_I_install_the_packages_from_the_EPEL_software_repository.3F" target="_blank">epel</a>
@@ -16,7 +16,7 @@ Good to know: I might have used yum but we all know that the repo's of centos en
 Make sure you also use repo's for a more updated ruby and gems. I'm going to start with the ruby install right from the bat. Please make sure your server has Apache and Mysql installed. This tutorial won't explain that part.
 
 # Installing Ruby
-Redmine works on ruby so we will start with installing ruby. You can install ruby in 2 ways.</p>
+Redmine works on ruby so we will start with installing ruby. You can install ruby in 2 ways.
 
 1. From the source
 2. Trough yum
@@ -25,7 +25,7 @@ Thoose the one you prefer I will use the yum method:
 
     yum install ruby ruby-devel ruby-libs ruby-irb ruby-rdoc ruby-mysql
 
-Just make sure that you have the right version of ruby. The standard repositories don't have the later versions yet so make sure to use other repositories. I used version 1.8.5. Just make sure that you use a compatible version. You can see that here: <a title="Redmine Ruby versions" href="http://www.redmine.org/wiki/1/RedmineInstall" target="_blank">Redmine Ruby Versions</a></p>
+Just make sure that you have the right version of ruby. The standard repositories don't have the later versions yet so make sure to use other repositories. I used version 1.8.5. Just make sure that you use a compatible version. You can see that here: <a title="Redmine Ruby versions" href="http://www.redmine.org/wiki/1/RedmineInstall" target="_blank">Redmine Ruby Versions</a>
 
 # Installing ruby-gems
 Installing ruby-gems goes most of the time by hand:
