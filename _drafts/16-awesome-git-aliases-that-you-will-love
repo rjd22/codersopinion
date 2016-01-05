@@ -53,17 +53,30 @@ alias: `a = add -p`
 result:
 ![Staging your git changes in patches]({{ site.url }}/assets/awesome-git-aliases/git-a.png)
 
-## Viewing your git log the pretty way
+## More informational git logs
 
 alias: `plog = log --graph --pretty='format:%C(red)%d%C(reset) %C(yellow)%h%C(reset) %ar %C(green)%aN%C(reset) %s'`
 result:
-![Viewing your git log the pretty way]({{ site.url }}/assets/awesome-git-aliases/git-plog.png)
+![Git log the pretty way]({{ site.url }}/assets/awesome-git-aliases/git-plog.png)
 
-## Viewing your git log with the files that changed for each commit
-
-alias: `plog = log --graph --pretty='format:%C(red)%d%C(reset) %C(yellow)%h%C(reset) %ar %C(green)%aN%C(reset) %s'`
+alias: `lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit`
 result:
-![Viewing your git log the pretty way]({{ site.url }}/assets/awesome-git-aliases/git-plog.png)
+![Git log the pretty way 2]({{ site.url }}/assets/awesome-git-aliases/git-lg.png)
+
+alias: `tlog = log --stat --since='1 Day Ago' --graph --pretty=oneline --abbrev-commit --date=relative`
+result:
+![Git log with the files that changed for each commit]({{ site.url }}/assets/awesome-git-aliases/git-plog.png)
+
+## Who works on a project ordered by number of merges
+
+alias: `rank = shortlog -sn --no-merges`
+result:
+![Who works on a project ordered by number of merges]({{ site.url }}/assets/awesome-git-aliases/git-tlog.png)
+
+## Remove all branches merged into your current branch
+
+alias: `bdm = "!git branch --merged | grep -v '*' | xargs -n 1 git branch -d"`
+
 
 {% highlight bash %}
 [alias]
@@ -85,7 +98,7 @@ result:
     # Complex aliases
     plog = log --graph --pretty='format:%C(red)%d%C(reset) %C(yellow)%h%C(reset) %ar %C(green)%aN%C(reset) %s'
     tlog = log --stat --since='1 Day Ago' --graph --pretty=oneline --abbrev-commit --date=relative
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
     rank = shortlog -sn --no-merges
     bdm = "!git branch --merged | grep -v '*' | xargs -n 1 git branch -d"
-    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 {% endhighlight %}
