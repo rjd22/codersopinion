@@ -116,32 +116,32 @@ First create a directory where all git repositories will be in. Mine is located 
 Now edit your httpd.conf to fit your settings:
 
 {% highlight apache %}
-PerlLoadModule Apache::Redmine
-SetEnv GIT_PROJECT_ROOT /home/redmine/git_repositories/
-SetEnv GIT_HTTP_EXPORT_ALL
-ScriptAlias /git/ /usr/libexec/git-core/git-http-backend/
-<Location /git>
-	RedmineGitSmartHttp yes
-	DAV on
-	AuthType Basic
-	Require valid-user
-	AuthName "Git"
-	PerlAccessHandler Apache::Authn::Redmine::access_handler
-	PerlAuthenHandler Apache::Authn::Redmine::authen_handler
-	RedmineDSN "DBI:mysql:database=redmine;host=localhost"
-	RedmineDbUser "redmine"
-	RedmineDbPass "my_password"
-</Location>
-Alias /git-private /home/redmine/git_repositories
-<Location /git-private>
-	Order deny,allow
-	Deny from all
-	<Limit GET PROPFIND OPTIONS REPORT>
-		Options Indexes FollowSymLinks MultiViews
-		Allow from 127.0.0.1
-		Allow from localhost
-	</Limit>
-</Location>
+    PerlLoadModule Apache::Redmine
+    SetEnv GIT_PROJECT_ROOT /home/redmine/git_repositories/
+    SetEnv GIT_HTTP_EXPORT_ALL
+    ScriptAlias /git/ /usr/libexec/git-core/git-http-backend/
+    <Location /git>
+        RedmineGitSmartHttp yes
+        DAV on
+        AuthType Basic
+        Require valid-user
+        AuthName "Git"
+        PerlAccessHandler Apache::Authn::Redmine::access_handler
+        PerlAuthenHandler Apache::Authn::Redmine::authen_handler
+        RedmineDSN "DBI:mysql:database=redmine;host=localhost"
+        RedmineDbUser "redmine"
+        RedmineDbPass "my_password"
+    </Location>
+    Alias /git-private /home/redmine/git_repositories
+    <Location /git-private>
+        Order deny,allow
+        Deny from all
+        <Limit GET PROPFIND OPTIONS REPORT>
+            Options Indexes FollowSymLinks MultiViews
+            Allow from 127.0.0.1
+            Allow from localhost
+        </Limit>
+    </Location>
 {% endhighlight %}
 
 Maybe you already noticed. That this is completely different from the configuration the Redmine sites gives. This is because we will be using git's git-smart-http protocol. With this you can push your repository straight to the http link. If you are a valid user. For this to work you need to make sure you git version is higher than 1.6.6. Also check all paths for this httpd config since some could be off. Just try to locate the correct files with "find / -name yourfilenamehere".
