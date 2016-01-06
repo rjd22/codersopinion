@@ -9,6 +9,8 @@ comments: true
 
 When making forms ever had the urge to find something easier than having to define every value in your JavaScript? I did and found something nice called serialize. What is does is add all values into 1 string. Because I began to like serialize I'm writing an article on the use of it.
 
+<!--more-->
+
 Lately I see a lot of people writing their own functions to deserialize it in php not knowing that php has it's own function for deserializing namely 'parse_str'. What it does is get the values and put them into an array so you can access them individually. Here is a little code for example:
 
 # This is the Template

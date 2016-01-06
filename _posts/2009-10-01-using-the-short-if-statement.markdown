@@ -9,6 +9,8 @@ comments: true
 
 I'm always lost when I need to find the shorthand version of the if statement in php. That is why I write again a small note for myself so I can find it again.
 
+<!--more-->
+
 {% highlight php %}
 $value = 'sunny';
 $weather = ($value == 'sunny')

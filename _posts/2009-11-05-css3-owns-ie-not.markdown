@@ -9,6 +9,8 @@ comments: true
 
 Lately I've been looking for nice simple fixes for common problems inside styling your application. I've began to notice that CSS3 implements a lot features that I was looking for, to find out later that Microsoft is being stubborn again to implement it right(if they do it at all).
 
+<!--more-->
+
 Likely most web developers feel this but when you run your application in IE a little part inside of you dies. Since I don't want to take the focus to Microsoft (I only make a exception if it's bad for Microsoft's sales) I'm going to continue with CSS3.
 
 CSS3 has great new features that make your life of a web developer a lot easier. You almost could say that we're getting spoiled don't you think? I'm going to talk about 2 of the most popular functions:</p>

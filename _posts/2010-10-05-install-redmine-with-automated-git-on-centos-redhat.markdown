@@ -9,6 +9,8 @@ comments: true
 
 I had a few days work on this one while it was supposed to be done in a hour. The problem? Lack of good documentation. There seems to be no complete tutorial on the Internet how to completely integrate git with Redmine so I figured to make one myself for you my dear reader but also a little bit for myself so I can easily find it back.
 
+<!--more-->
+
 Good to know: I might have used yum but we all know that the repo's of centos en redhad are way behind in version. Please make sure you have extra repo's. I used:
 <a title="epel repo" href="http://fedoraproject.org/wiki/EPEL/FAQ#How_can_I_install_the_packages_from_the_EPEL_software_repository.3F" target="_blank">epel</a>
 <a title="webtatic repo" href="http://www.webtatic.com/blog/2009/06/php-530-on-centos-5/" target="_blank">webtatic</a>

@@ -15,6 +15,8 @@ comments: true
 
 I've been trying to get the API from google youtube to work so I can upload video's to it from my web application. It took me extremely long to figure out how the API worked because of lack of documentation at this moment. That is why I'm writing a blog post about it so people will hopefully have less trouble with it.
 
+<!--more-->
+
 # Downloading the Google PHP Library
 
 First you need to get the <a href="http://code.google.com/p/google-api-php-client/" target="_blank">Google PHP API Libary</a> so <u>not the Zend libary</u>. As you can see that libary also has an example. Parts of that example we will use to handle the authentication for us.

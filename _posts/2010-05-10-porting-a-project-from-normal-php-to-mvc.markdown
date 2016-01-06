@@ -9,6 +9,8 @@ comments: true
 
 I've been working on a project for quite a while. It needed to be extended heavily. The designer before me had made his own kind of MVC system with smarty and OOP. Still the application had some huge structure and scaling issues. I'm going to talk about the process of migrating an existing application to Kohana (or any other MVC framework).</p>
 
+<!--more-->
+
 # Phase 1: Structuring / Designing
 
 
