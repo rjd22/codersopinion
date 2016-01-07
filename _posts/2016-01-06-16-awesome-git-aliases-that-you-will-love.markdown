@@ -2,7 +2,7 @@
 layout: post
 title: 16 awesome git aliases that you will love
 permalink: /blog/16-awesome-git-aliases-that-you-will-love/
-date: 2015-12-11 14:02:00
+date: 2016-01-06 19:12:10
 categories: Development Tools
 banner_image: "/media/awesome-git-aliases/git-logo.jpg"
 featured: true
