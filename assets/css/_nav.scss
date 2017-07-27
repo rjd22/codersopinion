@@ -5,10 +5,11 @@
 nav {
 	position: absolute;
 	z-index: 400;
-	top: 20px;
+	top: 15px;
 	right: 20px;
 	font: 600 14px 'Open Sans', Serif;
 	clear: both;
+	line-height:35px;
 
 	@include transition(all 0.2s ease-out);
 

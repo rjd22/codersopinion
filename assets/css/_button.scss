@@ -83,6 +83,16 @@
 		color: #fff;
 	}
 
+	&.stackoverflow:hover {
+		background: #F48024;
+		color: #fff;
+	}
+
+	&.linkedin:hover {
+		background: #0e76a8;
+		color: #fff;
+	}
+
 	&.instagram:hover {
 		background: #3f729b;
 		color: #fff;
@@ -125,6 +135,17 @@
 			color: #171515;
 			-webkit-box-shadow: inset 0 0 0px 2px #171515;
 			box-shadow: inset 0 0 0px 2px #171515;
+		}
+	}
+
+	.stackoverflow {
+		-webkit-box-shadow: inset 0 0 0px 20px #F48024;
+		box-shadow: inset 0 0 0px 20px #F48024;
+
+		&:hover {
+			color: #171515;
+			-webkit-box-shadow: inset 0 0 0px 2px #F48024;
+			box-shadow: inset 0 0 0px 2px #F48024;
 		}
 	}
 

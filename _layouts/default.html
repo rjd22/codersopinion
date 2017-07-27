@@ -11,12 +11,12 @@
 		<meta name="MobileOptimized" content="320" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-		<link rel="alternate" type="application/rss+xml" href="{{ site.baseurl }}/feed.xml">
-		<link rel="shortcut icon" href="{{ "/favicon.ico" | prepend: site.baseurl }}">
-		<link rel="prefetch" href="{{ site.baseurl }}">
-		<link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl }}">
+		<link rel="alternate" type="application/rss+xml" href="{{ site.url }}/feed.xml">
+		<link rel="shortcut icon" href="{{ "/favicon.ico" | prepend: site.url }}">
+		<link rel="prefetch" href="{{ site.url }}">
+		<link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.url }}">
 
-		<link rel="stylesheet" href="{{ "/assets/css/screen.css" | prepend: site.baseurl }}">
+		<link rel="stylesheet" href="{{ "/assets/css/screen.css" | prepend: site.url }}">
 		<link href='//fonts.googleapis.com/css?family=Domine:700|Open+Sans:400,600|Source+Code+Pro:500' rel='stylesheet' type='text/css'>
 		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 	</head>
@@ -38,7 +38,7 @@
 			'autoload_comments': {{ site.theme_autoload_comments }}
 		};
 	</script>
-	<script async type="text/javascript" src="{{ "/assets/js/theme.min.js" | prepend: site.baseurl }}"></script>
+	<script async type="text/javascript" src="{{ "/assets/js/theme.min.js" | prepend: site.url }}"></script>
 
   </body>
 </html>

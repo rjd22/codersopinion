@@ -1,10 +1,13 @@
 ---
 layout: page
-title: About
+title: About Me
 permalink: /about-me/
 comments: false
 ---
 
-Hey, I’m Robert-Jan de Dreu. A programmer mostly focusing on the web. While using PHP and MVC I will make sure the program I’m building is well documented and structured. I use this blog to show what I made and keep reminding myself of little tasks that I have done and maybe need to do again.
+Hey, I’m Robert-Jan de Dreu. A freelance software engineer, developing software since 2009. While using PHP and Javascript I build well structured and tested software. 
 
-I live in Utrecht, The Netherlands and can be found in Affiliate4you where my job is at. I’m available for freelancing if you want me to do a project for you. Just send me a message.
+I enjoy working together with other software engineers to find the best solution possible. If you want to know what I'm capable off check out my skills.
+
+I'm located at [Zeist, The Netherlands](https://www.google.nl/maps/place/Zeist). Feel free to contact me if you need me for a freelance job or just to ask some questions.
+
