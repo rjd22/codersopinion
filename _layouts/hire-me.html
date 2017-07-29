@@ -2,11 +2,41 @@
 layout: default
 ---
 
+<div class="profile featured">
+	{% if site.author_image != "" %}<img src="{{ site.author_image }}" class="profileimage" alt="user">{% endif %}
+	<h4>{{ site.author_name }}</h4>
+	<ul>
+		{% if site.twitter_url != '' %}<li><a href="{{ site.twitter_url }}" class="smallsocialbutton twitter" target="_blank"><i class="fa fa-twitter"></i></a></li>{% endif %}
+		{% if site.facebook_url != '' %}<li><a href="{{ site.facebook_url }}" class="smallsocialbutton facebook" target="_blank"><i class="fa fa-facebook"></i></a></li>{% endif %}
+		{% if site.github_url != '' %}<li><a href="{{ site.github_url }}" class="smallsocialbutton github" target="_blank"><i class="fa fa-github"></i></a></li>{% endif %}
+		{% if site.stackoverflow_url != '' %}<li><a href="{{ site.stackoverflow_url }}" class="smallsocialbutton stackoverflow" target="_blank"><i class="fa fa-stack-overflow"></i></a></li>{% endif %}
+		{% if site.linkedin_url != '' %}<li><a href="{{ site.linkedin_url }}" class="smallsocialbutton linkedin" target="_blank"><i class="fa fa-linkedin"></i></a></li>{% endif %}
+		{% if site.instagram_url != '' %}<li><a href="{{ site.instagram_url }}" class="smallsocialbutton instagram" target="_blank"><i class="fa fa-instagram"></i></a></li>{% endif %}
+		<li><a href="{{ site.url }}/feed.xml" class="smallsocialbutton rss" target="_blank"><i class="fa fa-rss"></i></a></li>
+	</ul>
+	<p>
+		Hey, I’m Robert-Jan de Dreu. A freelance software engineer and coach, developing software since 2009. I can help
+		you with continuing development on your current applications, refactor legacy applications or build new
+		applications.
+	</p>
+	<hr>
+</div>
+
+<div id="cover" class="cover featured">
+	<div class="background" style="background-image:url('{{ page.banner_image }}');"></div>
+	<header class="wrapper">
+		<h2></h2>
+		<h1>Looking for a software engineer?</h1>
+		<span></span>
+	</header>
+	<i class="fa fa-chevron-down movedown"></i>
+</div>
+
 <section class="posts wrapper">
 	<article class="post">
 
 	<header>
-		<h1 id="posttitle">Looking for a software engineer?</h1>
+		<h1 id="posttitle"></h1>
 	</header>
 
 	<section class="postbody">

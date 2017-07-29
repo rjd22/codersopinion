@@ -4,12 +4,13 @@ title: Hire Me
 permalink: /hire-me/
 comments: false
 main-menu-button: true
+banner_image: "/media/hire-me/hire-me-bg.jpg"
 ---
 
-<img style="float: right" src="{{ site.url }}/assets/img/author.png">
-Hey, I’m Robert-Jan de Dreu. A freelance software engineer and coach developing software since 2009. I can help you
-with continuing development on your current applications, refactor legacy applications or build new applications. 
-I can also coach your your team on subjects listed below.
+## What I can do for you
+
+
+
 
 ## Experience
 While the list below is certainly not complete it will give you a broad overview of the tools that I have experience
