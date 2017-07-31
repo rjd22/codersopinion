@@ -1,0 +1,54 @@
+/*
+    HIRE ME STYLES
+*/
+
+.hire-me {
+    .info-box {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: start;
+        -webkit-align-items: flex-start;
+        -ms-flex-align: start;
+        align-items: flex-start;
+
+        .info-icon {
+            display: -webkit-box!important;
+            display: -webkit-flex!important;
+            display: -ms-flexbox!important;
+            display: flex!important;
+
+            margin-right: 1rem!important;
+            width: 64px;
+            height: 64px;
+            text-align: center;
+            background: #efefef;
+            color: #606060;
+            border-radius: 36px;
+
+            @include transition(all 0.2s ease-in-out);
+
+            i {
+                vertical-align: -5px;
+                position: relative;
+            }
+
+            &.twitter:hover {
+                background: #00acee;
+                color: #fff;
+            }
+        }
+
+        h4 {
+            margin: 0;
+        }
+
+        .info-body {
+            -webkit-box-flex: 1;
+            -webkit-flex: 1 1 0%;
+            -ms-flex: 1 1 0%;
+            flex: 1 1 0%;
+        }
+    }
+}
