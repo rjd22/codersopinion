@@ -42,14 +42,14 @@ layout: default
                     {% if site.author_phone != '' %}
                     <li>
                         <a href="tel:{{ site.author_phone }}" class="linkedin" target="_blank"><i class="fa fa-phone"></i></a>
-                        <a href="{{ site.author_phone }}" class="profilelink" target="_blank">{{ site.author_phone }}</a>
+                        <a href="tel:{{ site.author_phone }}" class="profilelink" target="_blank">{{ site.author_phone }}</a>
 
                     </li>
                     {% endif %}
                     {% if site.author_email != '' %}
                     <li>
                         <a href="mailto:{{ site.email }}" class="stackoverflow" target="_blank"><i class="fa fa-envelope"></i></a>
-                        <a href="{{ site.author_email }}" class="profilelink" target="_blank">{{ site.author_email }}</a>
+                        <a href="mailto:{{ site.author_email }}" class="profilelink" target="_blank">{{ site.author_email }}</a>
                     </li>
                     {% endif %}
                     {% if site.twitter_url != '' %}
