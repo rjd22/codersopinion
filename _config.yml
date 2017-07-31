@@ -16,9 +16,9 @@ paginate:                   5
 author_name:                "Robert-Jan de Dreu"
 author_url:                 "http://codersopinion.com"
 author_bio:                 "Hey, I’m Robert-Jan de Dreu. A freelance software engineer, developing software since 2009. While using PHP and Javascript I build well structured and tested software."
-author_email:               "info@codersopinion.com"
+author_email:               "me@codersopinion.com"
+author_phone:               "+31 6 19 76 61 30"
 author_image:               "/assets/img/author.png"
-
 
 # Social Settings
 twitter_url:                "http://twitter.com/robertjandreu"

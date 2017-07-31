@@ -193,6 +193,11 @@
             color: #fff;
             @include transition(all 0.25s ease-out);
         }
+
+        a.profilelink {
+            width: auto;
+            color: #026ed2;
+        }
     }
 
     @media screen and (max-width: 320px) {

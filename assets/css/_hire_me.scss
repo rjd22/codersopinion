@@ -3,22 +3,24 @@
 */
 
 .hire-me {
+    h2.first {
+        margin: 0 0 40px 0;
+    }
+
     .info-box {
         display: -webkit-box;
         display: -webkit-flex;
         display: -ms-flexbox;
         display: flex;
+
         -webkit-box-align: start;
         -webkit-align-items: flex-start;
         -ms-flex-align: start;
         align-items: flex-start;
 
-        .info-icon {
-            display: -webkit-box!important;
-            display: -webkit-flex!important;
-            display: -ms-flexbox!important;
-            display: flex!important;
+        margin-bottom: 30px;
 
+        .info-icon {
             margin-right: 1rem!important;
             width: 64px;
             height: 64px;
@@ -30,18 +32,9 @@
             @include transition(all 0.2s ease-in-out);
 
             i {
-                vertical-align: -5px;
-                position: relative;
+                font-size: 34px;
+                margin-top: 13px;
             }
-
-            &.twitter:hover {
-                background: #00acee;
-                color: #fff;
-            }
-        }
-
-        h4 {
-            margin: 0;
         }
 
         .info-body {
@@ -49,6 +42,25 @@
             -webkit-flex: 1 1 0%;
             -ms-flex: 1 1 0%;
             flex: 1 1 0%;
+            text-align: justify;
+            font-size: 15px;
+
+            h4 {
+                margin: 0 0 10px 0;
+                text-align: left;
+                font-size: 18px;
+            }
         }
+    }
+
+    p {
+        line-height: 28px;
+    }
+
+    ul {
+        list-style: square outside none;
+        margin-top: 0;
+        margin-bottom: 1rem;
+        padding-left: 20px;
     }
 }
