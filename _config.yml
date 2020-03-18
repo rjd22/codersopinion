@@ -4,7 +4,7 @@ plugins:                    [jekyll-paginate]
 
 # Site Settings
 title:                      "Coders Opinion"
-email:                      "info@codersopinion.com"
+email:                      "me@codersopinion.com"
 description:                "PHP, CSS, JS, XHTML"
 baseurl:                    ""
 logourl:                    "/assets/img/bloglogo.jpg"
@@ -14,7 +14,7 @@ paginate:                   5
 
 # Author Settings
 author_name:                "Robert-Jan de Dreu"
-author_url:                 "http://codersopinion.com"
+author_url:                 "https://codersopinion.com"
 author_bio:                 "Hey, I’m Robert-Jan de Dreu. A freelance software engineer, developing software since 2009. While using PHP and Javascript I build well structured and tested software."
 author_email:               "me@codersopinion.com"
 author_phone:               "+31 6 19 76 61 30"
