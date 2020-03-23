@@ -36,7 +36,7 @@ linkedin_url:               "http://linkedin.com/in/robertjandedreu"
 # Theme Settings
 theme_disqus_shortname:     "codersopinion"
 theme_google_comments:      false
-theme_analytics_id:         "UA-3715327-4"
+theme_analytics_id:         ""
 theme_reading_time:         true
 theme_autoload_comments:    true
 theme_always_show_nav:      true
