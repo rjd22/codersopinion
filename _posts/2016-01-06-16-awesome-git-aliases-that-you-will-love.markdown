@@ -4,7 +4,7 @@ title: 16 awesome git aliases that you will love
 permalink: /blog/16-awesome-git-aliases-that-you-will-love/
 date: 2016-01-06 19:12:10
 categories: Development Tools
-banner_image: "/media/awesome-git-aliases/git-logo.jpg"
+banner_image: "awesome-git-aliases/git-logo.jpg"
 featured: true
 comments: true
 ---
@@ -50,7 +50,7 @@ st = status -sb
 {% endhighlight %}
 
 Example:
-![Checking the status of you git commit]({{ site.url }}/media/awesome-git-aliases/git-st.png)
+![Checking the status of you git commit](/images/posts/awesome-git-aliases/git-st.png)
 
 ## Stage your git changes in patches
 I really like to review my changes before adding them, maybe you do too. Git diff is a really good tool for this, but
@@ -64,7 +64,7 @@ a = add -p
 {% endhighlight %}
 
 Example:
-![Staging your git changes in patches]({{ site.url }}/media/awesome-git-aliases/git-a.png)
+![Staging your git changes in patches](/images/posts/awesome-git-aliases/git-a.png)
 
 ## More helpfull git logs
 Git logs help us to see what happened to the code we're working on. They are a history of the changes made but also when
@@ -78,21 +78,21 @@ plog = log --graph --pretty='format:%C(red)%d%C(reset) %C(yellow)%h%C(reset) %ar
 {% endhighlight %}
 
 Example:
-![Git log the pretty way]({{ site.url }}/media/awesome-git-aliases/git-plog.png)
+![Git log the pretty way](/images/posts/awesome-git-aliases/git-plog.png)
 
 {% highlight ini %}
 lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 {% endhighlight %}
 
 Example:
-![Git log the pretty way 2]({{ site.url }}/media/awesome-git-aliases/git-lg.png)
+![Git log the pretty way 2](/images/posts/awesome-git-aliases/git-lg.png)
 
 {% highlight ini %}
 tlog = log --stat --since='1 Day Ago' --graph --pretty=oneline --abbrev-commit --date=relative
 {% endhighlight %}
 
 Example:
-![Git log with the files that changed for each commit]({{ site.url }}/media/awesome-git-aliases/git-plog.png)
+![Git log with the files that changed for each commit](/images/posts/awesome-git-aliases/git-plog.png)
 
 ## Contributors ordered by number of merges
 Finding out the top contributors of the project can come in handy when you want to find out who to speak to when you
@@ -103,7 +103,7 @@ rank = shortlog -sn --no-merges
 {% endhighlight %}
 
 Example:
-![Who works on a project ordered by number of merges]({{ site.url }}/media/awesome-git-aliases/git-rank.png)
+![Who works on a project ordered by number of merges](/images/posts/awesome-git-aliases/git-rank.png)
 
 ## Remove all merged branches
 Before making a pull-request we need to make a branch locally where we can commit our work to. After a while you will 
@@ -118,7 +118,7 @@ bdm = "!git branch --merged | grep -v '*' | xargs -n 1 git branch -d"
 {% endhighlight %}
 
 Example:
-![Remove all branches merged into your current branch]({{ site.url }}/media/awesome-git-aliases/git-bdm.png)
+![Remove all branches merged into your current branch](/images/posts/awesome-git-aliases/git-bdm.png)
 
 {% highlight ini %}
 [alias]

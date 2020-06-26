@@ -1,7 +1,6 @@
-<div class="container">
-	<img src="{{ include.imageurl }}" alt="{{ include.description }}"/>
-	<div class="reference">
-		<strong>{{ include.title }}</strong>
-		<p>{{ include.description }}</p>
-	</div>
-</div>
+<figure class="caption">
+    <img src="{{ include.imageurl }}" alt="{{ include.title }}"/>
+    {% if include.caption %}
+    <figcaption class="caption-text">{{ include.caption }}</figcaption> 
+    {% endif %}
+</figure>

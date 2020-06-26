@@ -1,17 +1,17 @@
-<header class="title">
-	<a href="{{ site.url }}"><i class="fa {{ site.fa-logo }} fa-lg"></i><span>{{ site.title }}</span></a>
-</header>
+<header class="site-header outer">
+    <div class="inner">
+        <div class="site-header-inside">
 
-<nav class="wrapper {% if page.featured == true %} featured {% endif %} {% if site.theme_always_show_nav == true %} alwaysshow {% endif %}">
-	<!--<a href="#" onclick="return false;"><i class="fa fa-navicon fa-lg"></i></a>-->
-	<ul>
-		{% for page in site.pages %}
-			{% if page.title %}
-			<li>
-				<a href="{{ page.url | prepend: site.url }}" {% if page.main-menu-button %}class="smallbutton blue"{% endif %}>{{ page.title }}</a>
-			</li>
-			{% endif %}
-		{% endfor %}
-	</ul>
+            {% if page.url == "/" %}
+            <h1 class="site-title"><a href="{{ site.baseurl }}/">{{site.title}}</a></h1>
+            {% else %}
+            <p class="site-title"><a href="{{ site.baseurl }}/">{{site.title}}</a></p>
+            {% endif %}
 
-</nav>
+            {% if site.tagline %}
+            <p class="site-description">{{site.tagline}}</p>
+            {% endif %}
+
+        </div><!-- .site-header-inside -->
+    </div><!-- .inner -->
+</header><!-- .site-header -->
