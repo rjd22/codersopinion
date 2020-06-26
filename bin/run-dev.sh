@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export JEKYLL_VERSION=3.5
+export JEKYLL_VERSION=4
 docker run --rm \
   --env JEKYLL_UID=$UID \
   --publish 4000:4000 \

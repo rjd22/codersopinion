@@ -4,7 +4,6 @@ title: Push new project to an external bare git repository
 permalink: /blog/push-new-project-to-an-external-bare-git-repository/
 categories: Development Tools
 date: 2011-02-16 10:44:02
-featured: false
 comments: true
 ---
 
