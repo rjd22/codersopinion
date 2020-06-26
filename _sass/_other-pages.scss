@@ -1,0 +1,76 @@
+/**
+ * 5. Content
+ * 5.5 Other Pages
+ */
+.hire-me-advantages {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: -20px;
+
+  .advantage {
+    margin-bottom: 20px;
+    width: 43%;
+    border: 1px dashed #dddddd;
+    padding: 20px;
+  }
+
+  .advantage-icon {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    svg {
+      height: 4em;
+      width: 4em;
+    }
+  }
+}
+
+.hire-me-experience {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  .experience {
+    margin-bottom: 30px;
+    width: 48%;
+  }
+}
+
+.contact-me {
+  display: flex;
+  justify-content: space-between;
+
+  .image {
+    width: 20%;
+  }
+
+  .info {
+    width: 75%;
+  }
+
+  .contact-button {
+    display: inline-block;
+    margin-right: 15px;
+  }
+
+  .contact-button-label {
+    font-size: 1.1em;
+    text-decoration: none;
+  }
+}
+
+@media only screen and (max-width: 960px) {
+  .hire-me-advantages {
+    .advantage {
+      width: 100%;
+    }
+  }
+
+  .hire-me-experience {
+    .experience {
+      width: 100%;
+    }
+  }
+}

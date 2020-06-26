@@ -1,55 +1,83 @@
-# External Gems
-plugins:                    [jekyll-paginate]
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
 
+# Site title
+title: "Coders Opinion"
 
-# Site Settings
-title:                      "Coders Opinion"
-email:                      "me@codersopinion.com"
-description:                "PHP, CSS, JS, XHTML"
-baseurl:                    ""
-logourl:                    "/assets/img/bloglogo.jpg"
-fa-logo:                    "fa-bookmark-o"
-paginate:                   5
+# Tagline next to the site title
+tagline: "Random thoughts, stories and ideas."
+
+# A description of your site for social meta tag, search engines, and feed.xml
+description: "PHP, CSS, JS, XHTML"
+
+# The subpath of your site, e.g. /blog, for generating urls
+baseurl:
+
+# Sass
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# The base hostname & protocol of your site for where absolute urls are needed
+url: "https://justgoodthemes.com"
+
+# Site navigation - each item must have a title and a url.
+navigation:
+- text: Home
+  url: /
+- text: About Me
+  url: /about-me/
+- text: Hire Me
+  url: /hire-me/
+- text: Archives
+  url: /tags/
+
+# The shortname for your Disqus site to enable comments.
+disqus: "codersopinion"
+
+# Google Analytics id, e.g. "UA-NNNNNNNN-N"
+#google_analytics: ""
 
 
 # Author Settings
-author_name:                "Robert-Jan de Dreu"
-author_url:                 "https://codersopinion.com"
-author_bio:                 "Hey, I’m Robert-Jan de Dreu. A freelance software engineer, developing software since 2009. While using PHP and Javascript I build well structured and tested software."
-author_email:               "me@codersopinion.com"
-author_phone:               "+31 6 19 76 61 30"
-author_image:               "/assets/img/author.png"
+author_name:     "Robert-Jan de Dreu"
+author_url:      "https://codersopinion.com"
+author_bio:      "Hey, I’m Robert-Jan de Dreu. A freelance software engineer, developing software since 2009. While using PHP and Javascript I build well structured and tested software."
+author_email:    "me@codersopinion.com"
+author_phone:    "+31 6 19 76 61 30"
+author_location: "Zeist, The Netherlands"
+author_image:    "/images/author.png"
 
-# Social Settings
-twitter_url:                "http://twitter.com/robertjandreu"
-facebook_url:               ""
-github_url:                 "http://github.com/rjd22"
-stackoverflow_url:          "https://stackoverflow.com/users/255920/rjd22"
-youtube_url:                ""
-dribbble_url:               ""
-googleplus_url:             ""
-instagram_url:              ""
-pinterest_url:              ""
-linkedin_url:               "http://linkedin.com/in/robertjandedreu"
+# Sidebar Add banner
+#banner_url: "https://justgoodthemes.com"
+#banner_image: images/banner.jpg
+#banner_image_alt: "Alt text"
 
+# Sidebar newsletter widget - add your form action url for MailChimp signup form here
+#mailchimp_url: ""
 
-# Theme Settings
-theme_disqus_shortname:     "codersopinion"
-theme_google_comments:      false
-theme_analytics_id:         ""
-theme_reading_time:         true
-theme_autoload_comments:    true
-theme_always_show_nav:      true
+# Social links in the site footer
+twitter_url: "http://twitter.com/robertjandreu"
+#facebook_url: """"
+github_url: "http://github.com/rjd22"
+#codepen_url: ""
+#dribbble_url: ""
+#medium_url: ""
+#instagram_url: ""
+#pinterest_url: ""
+linkedin_url: "http://linkedin.com/in/robertjandedreu"
+#weibo_url: ""
 
+# http://jekyllrb.com/docs/pagination/
+paginate: 4
+paginate_path: '/blog/page:num/'
+plugins: [jekyll-paginate]
 
-# SASS Settings
-# DO NOT MODIFY
-sass:
- sass_dir: "assets/css/"
- style: :compressed
-
-
-# Build Settings
-markdown:                   kramdown
-permalink:                  pretty
-
+permalink: pretty
+markdown: kramdown
+kramdown:
+    auto_ids: false
