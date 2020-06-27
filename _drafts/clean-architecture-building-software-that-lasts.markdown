@@ -12,7 +12,7 @@ tags:
 comments: true
 ---
 
-When building software we sometimes have the need to build so it can for years. Some projects I've worked on was
+When building software we sometimes have the need to build it in a way so it can for years. Some projects I've worked on was
 software that was almost 10 years old. Within these 10 years a lot changes. For example language changes, framework
 changes and libraries that need to be replaced. In these cases the software needs to be build in a way to handle change
 with little impact.
