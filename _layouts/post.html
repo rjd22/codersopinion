@@ -5,10 +5,10 @@ layout: default
     <article class="post post-full">
         <header class="post-header">
             <div class="post-header-wrap">
-                {% if page.banner_image %}
+                {% if page.image %}
                 <div class="post-thumbnail">
-                    <img src="{{ "/images/posts/" | append: page.banner_image | prepend: site.baseurl }}"
-                        alt="{% if page.banner_image_alt %}{{ page.banner_image_alt }}{% else %}{{ page.title }}{% endif %}">
+                    <img src="{{ page.image | prepend: site.baseurl }}"
+                        alt="{% if page.image_alt %}{{ page.image_alt }}{% else %}{{ page.title }}{% endif %}">
                 </div>
                 {% endif %}
                 <h1 class="post-title outer">{{page.title}}</h1>
@@ -64,9 +64,9 @@ layout: default
         {% if page.previous.url %}
         <div class="nav-previous">
             <div class="nav-inside inner-small outer">
-                {% if page.previous.banner_image %}
+                {% if page.previous.image %}
                 <a href="{{ site.baseurl }}{{page.previous.url}}" class="nav-thumb"
-                    style="background-image: url({{ "/images/posts/" | append: page.previous.banner_image }})"></a>
+                    style="background-image: url({{ page.previous.image }})"></a>
                 {% endif %}
                 <div class="nav-before">Previous</div>
                 <h3 class="nav-title"><a href="{{ site.baseurl }}{{page.previous.url}}">{{page.previous.title}}</a>
@@ -78,9 +78,9 @@ layout: default
         {% if page.next.url %}
         <div class="nav-next">
             <div class="nav-inside inner-small outer">
-                {% if page.next.banner_image %}
+                {% if page.next.image %}
                 <a href="{{ site.baseurl }}{{page.next.url}}" class="nav-thumb"
-                    style="background-image: url({{ "/images/posts/" | append: page.next.banner_image }})"></a>
+                    style="background-image: url({{ page.next.image }})"></a>
                 {% endif %}
                 <div class="nav-before">Next</div>
                 <h3 class="nav-title"><a href="{{ site.baseurl }}{{page.next.url}}">{{page.next.title}}</a></h3>

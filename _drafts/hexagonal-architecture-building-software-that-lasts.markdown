@@ -4,7 +4,7 @@ title: Hexagonal architecture, building software that lasts
 permalink: /blog/hexagonal-architecture-building-software-that-lasts/
 date: 2017-07-06 19:12:10
 categories: Architecture
-banner_image: "hexagonal-architecture/hexagonal-architecture.png"
+image: "/images/posts/hexagonal-architecture/hexagonal-architecture.png"
 tags:
 - Architecture
 - Design
@@ -22,8 +22,8 @@ with little impact.
 ## Layers and boundaries
 
 We try to organize our application's code by using directory structures, layers and boundaries. These boundaries can be
-clear but they can also be fuzzy. Having clear boundaries in our application helps us and others understand how the
-application is working.
+clear but they can also become fuzzy if we're not careful. Having clear boundaries in our application helps us and
+others understand how the application is working.
 
 I often split my application's into 3 mayor parts that each have their own purpose. These 3 layers have really different
 goals and structure's what makes them easy to keep them apart:
@@ -42,12 +42,16 @@ infrastructure code can depend on any code and serves as the glue between the lo
 frameworks, databases and libraries.
 
 The reason this rule exists is to decouple your domain and application code from infrastructure code that is not always
-within your control like frameworks, ORM's or outside libraries. Code outside of your control can change when you update
-these systems causing your code to break. Keeping them within Infrastructure makes dealing with this change easier. 
+within your control like frameworks, ORM's and libraries. Code that is outside of your control can change with updates
+and keeping them within the infrastructure layer makes dealing with these changes easier.
+
+This doesn't mean you can't use outside systems within you application or domain layer. To use these libraries within
+these layers the application or domain layer needs to supply an interface that is implemented within the infrastructure
+layer. This way the control of how systems communicate stays within the application or domain layer so you only have to
+make changes in infrastructure.
 
 {% include image_caption.html imageurl="/images/posts/hexagonal-architecture/hexagonal-architecture.png" 
 title="Layered Architecture" caption="Layered Architecture" %}
-
 
 ## Domain layer
 
