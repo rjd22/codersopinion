@@ -23,7 +23,7 @@ sass:
   style: compressed
 
 # The base hostname & protocol of your site for where absolute urls are needed
-url: "https://justgoodthemes.com"
+url: "https://codersopinion.com"
 
 # Site navigation - each item must have a title and a url.
 navigation:
