@@ -91,41 +91,46 @@ test and the code really stable.
 
 The application layer could also be seen as the service layer of your application. It can contain service classes that
 help with executing business rules on aggregates in your domain layer. It will load an aggregate from the domain
-repository, run an operation on the aggregate and if the operation was successful persist the aggregate again. The
-application layer can also handle the collecting and dispatching of domain events so other system can listen in on the
+repository, run an operation on the aggregate and if the operation was successful, persist the aggregate again. The
+application layer can also handle the collecting and dispatching of domain events so other systems can listen in on the
 changes that have happened in your domain.
 
-The only rule to keep here is that it only depends on code in the domain layer and itself. If communication with an
-outside system is needed the application layer can supply an interface and dto's that can be implemented in the
-infrastructure layer. This way the application layer stays in control of the protocol and can be tested without the
-outside system. For testing the application layer you can either make use of unit tests or acceptance tests.
+The only rule to keep here is that the application code only depends on code in the domain and application layer. If
+communication with an outside system is needed the application layer can supply an interface and dto's objects that can
+be implemented in the infrastructure layer. By doing so the application layer stays in control of the protocol and can
+be tested without the outside systems present. If you want to test application layer you can either make use of unit
+or acceptance tests.
 
 > There is no single way to build an application layer. You can make one of from service classes but you could also use
 > commands and command handlers, usecase classes or any other pattern that fits your needs.
 
 ## Infrastructure layer
 
-Most applications have to communicate with external systems like databases, message queue's and API's. These systems can
-make the testing of you application very hard if you don't separate them from you application and domain layer.
+Most applications have to communicate with external systems like databases, message queue's, API's and so on. These
+systems can make testing your application and domain layer very hard, if you don't separate them properly from these
+layers.
 
-The infrastructure layer has any code that handles for example the following tasks:
+The infrastructure layer has any code that handles as example, the following tasks:
 
 - Handing HTTP requests
 - Talking to external API's
 - Sending emails and notifications
 - Persisting data in the database
+- And many more...
 
-Separating these things from your application layer and domain layer enables you to test these without these layers
-present. For example you have an API client that communicates with a newsletter provider. Because the implementation is
-separated from your application you will now be able to write integration tests for this library testing if it's
-communicating with the provider properly.
+Separating these tasks from your domain and application layer enables you to write integration tests for them without
+the need of having the domain and application layer present.
+
+For example, when you have an API client that communicates with a newsletter provider. Because the implementation is
+separated, tests can be written to test only the communication with the external provider without having to run the
+code in the domain and application layer.
 
 #### Framework integrating code
 
 Framework integrating code van also be found in the infrastructure layer. Most of these classes help with handling
-client requests and rendering templates. But also the implementation of the repositories using the ORM libraries that
-the framework supplies can be found in the infrastructure layer. Below is an example of a list of classes from
-frameworks that you will find in the infrastructure layer.
+client requests and rendering templates. But also the implementation of repositories that are using the ORM library that
+is supplied by the framework can be found in the infrastructure layer. Below is an example of a list of classes from
+frameworks that you will most likely find in the infrastructure layer.
 
 - Controllers
 - Repository Implementations (ORM)
@@ -138,8 +143,8 @@ framework and requesting the controller you want to test.
 
 ### Advantages
 
-There are a lot of advantages of having a clear separation between these layers. Not only makes it the code easier to
-read but also easier to follow. Testability will improve because you can test all the layers separately. But there are
+There are many advantages of having a clear separation between these layers. Not only will the code be easier to
+read but also easier to follow. Testability will improve because you can test the layers separately. But there are
 more advantages to using clearly separated layers. I will list them for you here:
 
 - You can design the domain and the application layer without having to think about infrastructure like databases,
@@ -153,11 +158,12 @@ more advantages to using clearly separated layers. I will list them for you here
 
 ## Conclusion
 
-I hope I gave a good insight in how to separate mayor concerns within your software. As you might have read at the
-beginning of this blog post this is the first one of my blog series. The following blog post will take a deep dive into:
+I hope this blog post gave you good insight on how to separate mayor concerns within your software. As you might have
+read at the beginning of this blog post this will be the first one of my blog series. The following blog posts will take
+a deep dive into:
 
 - How to design your domain layer
 - How to build an application layer to run operations on your domain layer
 - How to use the infrastructure layer to integrate with you framework, database and external systems
 
-These blog posts will come with code samples showing the different part of the systems to give you a more cleared view.
+These blog posts will come with code samples showing the different parts of the systems to give you a more clear view.
