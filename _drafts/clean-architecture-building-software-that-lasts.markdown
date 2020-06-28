@@ -2,7 +2,7 @@
 layout: post
 title: Clean architecture, building software that lasts
 permalink: /blog/clean-architecture-building-software-that-lasts/
-date: 2017-07-06 19:12:10
+date: 2020-06-28 11:08:00
 categories: Architecture
 image: "/images/posts/clean-architecture/clean-architecture.png"
 tags:
