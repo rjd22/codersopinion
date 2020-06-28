@@ -55,7 +55,7 @@ the infrastructure code can depend on any code. It serves as the glue between th
 for example frameworks, databases, and libraries.
 
 The reason this rule exists is to decouple your domain and application code from infrastructure code that is not always
-within your control like frameworks, ORM's, and libraries. Code that is outside of your control can change with updates.
+within your control like frameworks, ORM's, and libraries. Code that is outside your control can change with updates.
 Keeping this code within the infrastructure layer makes it easier to deal with these changes.
 
 This doesn't mean you can't use outside systems within your application or domain layer. To use these libraries within
@@ -83,7 +83,7 @@ business rules of the application. When you make use of DDD the domain layer can
 Together these classes decide on the business rules. Not having outside dependencies makes them easy to unit-test and
 improves the stability of the code.
 
-> While I earlier wrote not to use outside libraries in domain code. I sometimes use extremely stable libraries that
+> While I earlier wrote not to use outside libraries in domain code, sometimes I use extremely stable libraries that
 > don't have outside dependencies themselves. An example of a library is [Assert](https://github.com/beberlei/assert).
 > I feel this is perfectly fine in some of these cases, but do use outside libraries carefully.
 
@@ -138,7 +138,7 @@ frameworks that you will most likely find in the infrastructure layer.
 - Security classes
 
 The advantage of separating these from the other layers becomes apparent when you try to test these to see if
-they integrate with the framework properly. You can integration test the controller if you want to by booting the
+they integrate with the framework properly. You can write integration tests for the controllers by booting the
 framework and requesting the controller you want to test.
 
 ### Advantages
@@ -159,7 +159,7 @@ more advantages to using separated layers. I will list them for you here:
 ## Conclusion
 
 I hope this blog post gave you a good insight into how to separate mayor concerns within your software. As you might have
-read at the beginning of this blog post this will be the first one of my blog series. The following blog posts will take
+read at the beginning of this blog post, this will be the first one of my blog series. The following blog posts will take
 a deep dive into:
 
 - How to design your domain layer
