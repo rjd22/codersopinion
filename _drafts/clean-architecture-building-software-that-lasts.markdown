@@ -13,30 +13,30 @@ comments: true
 ---
 
 When building software we sometimes need to build it in a way so it will last for years. Some projects I've worked on
-used software that was running for almost 10 years. Within these 10 years the software had experienced many changes. For
-example language changes, framework changes, libraries that need to be replaced and many more. When this is the case the
-software needs to be build in a way to account for those many changes with little impact.
+used software that was running for almost 10 years. Within these 10 years, the software had experienced many changes. 
+For example language changes, framework changes, libraries that need to be replaced, and many more. When this is the 
+case, software needs to be built in a way to account for those many changes with little impact.
 
 <!--more-->
 
 ## Foreword
 
 When designing application architectures I often use these principles myself to make the software last and allow for
-easy change. With every project I also write design documentation with these principles in them, and thus have written
-them down for quite some times already. The goal of these blog series is to share what I have learned when designing
-these application architectures and hopefully they can also help you.
+easy change. With every project, I also write design documentation with these principles in them and thus have written
+them down quite some times already. The goal of these blog series is to share what I have learned when designing these
+application architectures and hopefully they can also help you.
 
-Please remember that there is no single way to design a application architecture. These principles certainly help but
-feel free to adjust them when this fits your needs better (I know I do, depending of the needs of my clients).
+Please remember that there is no single way to design an application architecture. These principles certainly help but
+feel free to adjust them when this fits your needs better (I know I do, depending on the needs of my clients).
 
 ## Layers and boundaries
 
-We try to organize our application's code by using directory structures, layers and boundaries. These boundaries can be
+We try to organize our application's code by using directory structures, layers, and boundaries. These boundaries can be
 clear at first but sometimes the become fuzzy if we're not careful. Having clear boundaries in our application helps us
 and others understand how the application is working.
 
-I often split my application's into 3 mayor parts that each have their own purpose. These 3 layers have different goals
-and structure's what makes it easy to keep them apart:
+I often split my application into 3 major parts that each have their purpose. These 3 layers have different goals and
+structure's what makes it easy to keep them apart:
 
 ```
 src/
@@ -49,16 +49,16 @@ Further below is an illustration of the layers with their boundaries. The arrows
 
 ### Dependency Direction
 
-The direction of the dependencies of the architecture points inwards. This means that the domain only depends on code
-that is within the domain. The application can depend on the code that is within the domain and application. At last the
-infrastructure code can depend on any code. It serves as the glue between the lower layers and outside systems for
-example frameworks, databases and libraries.
+The direction of the dependencies of the architecture points inwards. This means that the domain only depends on the
+code that is within the domain. The application can depend on the code that is within the domain and application, and 
+the infrastructure code can depend on any code. It serves as the glue between the lower layers and outside systems
+for example frameworks, databases, and libraries.
 
 The reason this rule exists is to decouple your domain and application code from infrastructure code that is not always
-within your control like frameworks, ORM's and libraries. Code that is outside of your control can change with updates.
+within your control like frameworks, ORM's, and libraries. Code that is outside of your control can change with updates.
 Keeping this code within the infrastructure layer makes it easier to deal with these changes.
 
-This doesn't mean you can't use outside systems within you application or domain layer. To use these libraries within
+This doesn't mean you can't use outside systems within your application or domain layer. To use these libraries within
 these layers the application or domain layer needs to supply an interface that is implemented within the infrastructure
 layer. This way the control of how these systems communicate stays within the application or domain layer and you only
 have to make changes in infrastructure.
@@ -78,10 +78,10 @@ business rules of the application. When you make use of DDD the domain layer can
 - Domain repositories (the interface, but not the implementation)
 - Domain event classes
 - Domain services
-- Other domain related classes
+- Other domain-related classes
 
-Together these classes decide on the business rules. Not having outside dependencies makes them really easy to unit 
-test and the code really stable.
+Together these classes decide on the business rules. Not having outside dependencies makes them easy to unit-test and
+improves the stability of the code.
 
 > While I earlier wrote not to use outside libraries in domain code. I sometimes use extremely stable libraries that
 > don't have outside dependencies themselves. An example of a library is [Assert](https://github.com/beberlei/assert).
@@ -91,28 +91,28 @@ test and the code really stable.
 
 The application layer could also be seen as the service layer of your application. It can contain service classes that
 help with executing business rules on aggregates in your domain layer. It will load an aggregate from the domain
-repository, run an operation on the aggregate and if the operation was successful, persist the aggregate again. The
+repository, run an operation on the aggregate, and if the operation was successful, persist the aggregate again. The
 application layer can also handle the collecting and dispatching of domain events so other systems can listen in on the
 changes that have happened in your domain.
 
 The only rule to keep here is that the application code only depends on code in the domain and application layer. If
-communication with an outside system is needed the application layer can supply an interface and dto's objects that can
+communication with an outside system is needed the application layer can supply an interface and DTO objects that can
 be implemented in the infrastructure layer. By doing so the application layer stays in control of the protocol and can
-be tested without the outside systems present. If you want to test application layer you can either make use of unit
+be tested without the outside systems present. If you want to test the application layer you can either make use of unit
 or acceptance tests.
 
 > There is no single way to build an application layer. You can make one of from service classes but you could also use
-> commands and command handlers, usecase classes or any other pattern that fits your needs.
+> commands and command handlers, use-case classes, or any other pattern that fits your needs.
 
 ## Infrastructure layer
 
-Most applications have to communicate with external systems like databases, message queue's, API's and so on. These
-systems can make testing your application and domain layer very hard, if you don't separate them properly from these
+Most applications have to communicate with external systems like databases, message queues, APIs, and so on. These
+systems can make testing your application and domain layer very hard if you don't separate them properly from these
 layers.
 
-The infrastructure layer has any code that handles as example, the following tasks:
+The infrastructure layer has any code that handles as an example, the following tasks:
 
-- Handing HTTP requests
+- Handling HTTP requests
 - Talking to external API's
 - Sending emails and notifications
 - Persisting data in the database
@@ -137,33 +137,33 @@ frameworks that you will most likely find in the infrastructure layer.
 - Forms
 - Security classes
 
-The advantage of separating these from the other layers becomes really apparent when you try to test these to see if
+The advantage of separating these from the other layers becomes apparent when you try to test these to see if
 they integrate with the framework properly. You can integration test the controller if you want to by booting the
 framework and requesting the controller you want to test.
 
 ### Advantages
 
-There are many advantages of having a clear separation between these layers. Not only will the code be easier to
+There are many advantages to having a clear separation between these layers. Not only will the code be easier to
 read but also easier to follow. Testability will improve because you can test the layers separately. But there are
-more advantages to using clearly separated layers. I will list them for you here:
+more advantages to using separated layers. I will list them for you here:
 
-- You can design the domain and the application layer without having to think about infrastructure like databases,
-  frameworks and email systems.
-- Upgrading frameworks, libraries and other infrastructural systems will only cause change in the Infrastructure layer
-  keeping domain logic and application services intact.
+- You can design the domain and the application layer without having to think about infrastructures like databases,
+  frameworks, and email systems.
+- Upgrading frameworks, libraries, and other infrastructural systems will only cause a change in the Infrastructure
+  layer keeping domain logic and application services intact.
 - Switching around infrastructure systems and libraries becomes easier. Have a library that became deprecated? No
-  worries just find another one to replace the deprecated one.
-- Testability improves: You can write unit tests for your domain layer, acceptance tests for your application layer and
+  worries just find another one to replace the deprecated library.
+- Testability improves: You can write unit tests for your domain layer, acceptance tests for your application layer, and
   integration tests for your infrastructure layer.
 
 ## Conclusion
 
-I hope this blog post gave you good insight on how to separate mayor concerns within your software. As you might have
+I hope this blog post gave you a good insight into how to separate mayor concerns within your software. As you might have
 read at the beginning of this blog post this will be the first one of my blog series. The following blog posts will take
 a deep dive into:
 
 - How to design your domain layer
 - How to build an application layer to run operations on your domain layer
-- How to use the infrastructure layer to integrate with you framework, database and external systems
+- How to use the infrastructure layer to integrate with your framework, databases, and external systems
 
 These blog posts will come with code samples showing the different parts of the systems to give you a more clear view.
