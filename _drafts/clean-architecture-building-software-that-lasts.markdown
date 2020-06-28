@@ -12,22 +12,22 @@ tags:
 comments: true
 ---
 
-When building software we sometimes have the need to build it in a way so it can last for years. Some projects I've worked on was
-software that was almost 10 years old. Within these 10 years a lot changes. For example language changes, framework
-changes and libraries that need to be replaced. In these cases the software needs to be build in a way to handle change
-with little impact.
+When building software we sometimes need to build it in a way so it will last for years. Some projects I've worked on
+used software that was running for almost 10 years. Within these 10 years the software had experienced many changes. For
+example language changes, framework changes, libraries that need to be replaced and many more. When this is the case the
+software needs to be build in a way to account for those many changes with little impact.
 
 <!--more-->
 
 ## Foreword
 
-When designing applications I use these principles myself to make them last and allow for easy change. Because with
-every project also design documentation is written I keep writing down these principles over and over again. I want to
-use this blog series to share what I have learned from designing these application's and how these principles can help
-you.
+When designing application architectures I often use these principles myself to make the software last and allow for
+easy change. With every project I also write design documentation with these principles in them, and thus have written
+them down for quite some times already. The goal of these blog series is to share what I have learned when designing
+these application architectures and hopefully they can also help you.
 
-Please remember that there is no single way to design a application architecture. While these principles certainly help
-feel free to adjust them if this fits your needs better (I know I do depending of the needs of my clients).
+Please remember that there is no single way to design a application architecture. These principles certainly help but
+feel free to adjust them when this fits your needs better (I know I do, depending of the needs of my clients).
 
 ## Layers and boundaries
 
