@@ -32,11 +32,11 @@ feel free to adjust them when this fits your needs better (I know I do, dependin
 ## Layers and boundaries
 
 We try to organize our application's code by using directory structures, layers and boundaries. These boundaries can be
-clear but they can also become fuzzy if we're not careful. Having clear boundaries in our application helps us and
-others understand how the application is working.
+clear at first but sometimes the become fuzzy if we're not careful. Having clear boundaries in our application helps us
+and others understand how the application is working.
 
-I often split my application's into 3 mayor parts that each have their own purpose. These 3 layers have really different
-goals and structure's what makes them easy to keep them apart:
+I often split my application's into 3 mayor parts that each have their own purpose. These 3 layers have different goals
+and structure's what makes it easy to keep them apart:
 
 ```
 src/
@@ -45,23 +45,23 @@ src/
     Infrastructure/
 ```
 
-Below is an illustration of the layers with their boundaries. The arrows show the direction of the dependencies.
+Further below is an illustration of the layers with their boundaries. The arrows show the direction of the dependencies.
 
 ### Dependency Direction
 
 The direction of the dependencies of the architecture points inwards. This means that the domain only depends on code
 that is within the domain. The application can depend on the code that is within the domain and application. At last the
-infrastructure code can depend on any code and serves as the glue between the lower layers and outside systems like
-frameworks, databases and libraries.
+infrastructure code can depend on any code. It serves as the glue between the lower layers and outside systems for
+example frameworks, databases and libraries.
 
 The reason this rule exists is to decouple your domain and application code from infrastructure code that is not always
-within your control like frameworks, ORM's and libraries. Code that is outside of your control can change with updates
-and keeping them within the infrastructure layer makes dealing with these changes easier.
+within your control like frameworks, ORM's and libraries. Code that is outside of your control can change with updates.
+Keeping this code within the infrastructure layer makes it easier to deal with these changes.
 
 This doesn't mean you can't use outside systems within you application or domain layer. To use these libraries within
 these layers the application or domain layer needs to supply an interface that is implemented within the infrastructure
-layer. This way the control of how systems communicate stays within the application or domain layer so you only have to
-make changes in infrastructure.
+layer. This way the control of how these systems communicate stays within the application or domain layer and you only
+have to make changes in infrastructure.
 
 {% include image_caption.html imageurl="/images/posts/clean-architecture/clean-architecture.png" 
 title="Clean Architecture" caption="Clean Architecture" %}
@@ -83,16 +83,17 @@ business rules of the application. When you make use of DDD the domain layer can
 Together these classes decide on the business rules. Not having outside dependencies makes them really easy to unit 
 test and the code really stable.
 
-> While I said not to use outside libraries in domain code. I sometimes use extremely stable libraries that don't
-> have outside dependencies. An example of a library is [Assert](https://github.com/beberlei/assert). I feel this is 
-> perfectly fine in this case but do use outside libraries carefully.
+> While I earlier wrote not to use outside libraries in domain code. I sometimes use extremely stable libraries that
+> don't have outside dependencies themselves. An example of a library is [Assert](https://github.com/beberlei/assert).
+> I feel this is perfectly fine in some of these cases, but do use outside libraries carefully.
 
 ## Application layer
 
 The application layer could also be seen as the service layer of your application. It can contain service classes that
-help with executing business rules on the aggregates in your domain layer. To do so it will load an aggregate from the
-domain repository, run an operation on the aggregate and if the operation was successful persist the aggregate again. It
-can also handle the collecting and dispatching of the domain events so other system can listen to these.
+help with executing business rules on aggregates in your domain layer. It will load an aggregate from the domain
+repository, run an operation on the aggregate and if the operation was successful persist the aggregate again. The
+application layer can also handle the collecting and dispatching of domain events so other system can listen in on the
+changes that have happened in your domain.
 
 The only rule to keep here is that it only depends on code in the domain layer and itself. If communication with an
 outside system is needed the application layer can supply an interface and dto's that can be implemented in the
