@@ -32,11 +32,11 @@ feel free to adjust them when this fits your needs better (I know I do, dependin
 ## Layers and boundaries
 
 We try to organize our application's code by using directory structures, layers, and boundaries. These boundaries can be
-clear at first but sometimes the become fuzzy if we're not careful. Having clear boundaries in our application helps us
+clear at first but sometimes they become fuzzy if we're not careful. Having clear boundaries in our application helps us
 and others understand how the application is working.
 
-I often split my application into 3 major parts that each have their purpose. These 3 layers have different goals and
-structure's what makes it easy to keep them apart:
+I often split my application into 3 major parts, each having their own purpose. The goals and structure of each part is
+different, making it easy to keep them apart:
 
 ```
 src/
@@ -54,8 +54,7 @@ code that is within the domain. The application can depend on the code that is w
 the infrastructure code can depend on any code. It serves as the glue between the lower layers and outside systems
 for example frameworks, databases, and libraries.
 
-The reason this rule exists is to decouple your domain and application code from infrastructure code that is not always
-within your control like frameworks, ORM's, and libraries. Code that is outside your control can change with updates.
+The reason this rule exists is because outside systems are not always within your control, and can change with updates.
 Keeping this code within the infrastructure layer makes it easier to deal with these changes.
 
 This doesn't mean you can't use outside systems within your application or domain layer. To use these libraries within
@@ -69,7 +68,9 @@ title="Clean Architecture" caption="Clean Architecture" %}
 ## Domain layer
 
 The domain layer is the innermost layer and doesn't depend on the outer layers. It has the classes that make up the
-business rules of the application. When you make use of DDD the domain layer can consist of the following classes:
+business rules of the application. When you make use of for example
+[Domain Driven Design](https://dddcommunity.org/library/vernon_2011/) the domain layer can consist of the following
+classes:
 
 - Aggregates
 - Aggregate roots
@@ -127,7 +128,7 @@ code in the domain and application layer.
 
 #### Framework integrating code
 
-Framework integrating code van also be found in the infrastructure layer. Most of these classes help with handling
+Framework integrating code can also be found in the infrastructure layer. Most of these classes help with handling
 client requests and rendering templates. But also the implementation of repositories that are using the ORM library that
 is supplied by the framework can be found in the infrastructure layer. Below is an example of a list of classes from
 frameworks that you will most likely find in the infrastructure layer.
@@ -158,7 +159,7 @@ more advantages to using separated layers. I will list them for you here:
 
 ## Conclusion
 
-I hope this blog post gave you a good insight into how to separate mayor concerns within your software. As you might have
+I hope this blog post gave you a good insight into how to separate major concerns within your software. As you might have
 read at the beginning of this blog post, this will be the first one of my blog series. The following blog posts will take
 a deep dive into:
 
