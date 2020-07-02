@@ -2,7 +2,7 @@
 layout: post
 title: Clean architecture, building software that lasts
 permalink: /blog/clean-architecture-building-software-that-lasts/
-date: 2020-06-28 11:08:00
+date: 2020-07-02 12:00:00
 categories: Architecture
 image: "/images/posts/clean-architecture/clean-architecture.png"
 tags:
@@ -84,6 +84,30 @@ classes:
 Together these classes decide on the business rules. Not having outside dependencies makes them easy to unit-test and
 improves the stability of the code.
 
+An example of a domain layer folder structure:
+
+```
+src/
+    Domain/
+        Invoice/
+            Event/
+                InvoiceCreated.php
+                InvoiceSendToCustomer.php
+                InvoicePaid.php
+            Exception/
+                UnableToCreateNewInvoice.php
+            InvoiceLine/
+                Amount.php (value object)
+                Description.php (value object)
+            Invoice.php (aggregate root/entity)
+            InvoiceLine.php (entity)
+            InvoiceId.php (value object)
+            InvoiceNumber.php (value object)
+            Receiver.php (value object)
+            InvoiceRepository.php (repository interface)
+        Identifier.php (general value object)
+```
+
 > While I earlier wrote not to use outside libraries in domain code, sometimes I use extremely stable libraries that
 > don't have outside dependencies themselves. An example of a library is [Assert](https://github.com/beberlei/assert).
 > I feel this is perfectly fine in some of these cases, but do use outside libraries carefully.
@@ -101,6 +125,27 @@ communication with an outside system is needed the application layer can supply 
 be implemented in the infrastructure layer. By doing so the application layer stays in control of the protocol and can
 be tested without the outside systems present. If you want to test the application layer you can either make use of unit
 or acceptance tests.
+
+An example of an application layer folder structure:
+
+```
+src/
+    Application/
+        CommandHandler/
+            Invoice/
+                CreateInvoiceCommand.php
+                CreateInvoiceCommandHandler.php
+                SendInvoiceToCustomerCommand.php
+                SendInvoiceToCustomerCommandHandler.php
+                PayInvoiceCommand.php
+                PayInvoiceCommandHandler.php
+        QueryRepository/
+            InvoiceQueryRepository.php (interface, implemented in the infrastructure)
+            ReadModel/
+                Invoice/
+                    DetailedInvoice.php
+                    ListedInvoice.php
+```
 
 > There is no single way to build an application layer. You can make one of from service classes but you could also use
 > commands and command handlers, use-case classes, or any other pattern that fits your needs.
@@ -142,6 +187,27 @@ The advantage of separating these from the other layers becomes apparent when yo
 they integrate with the framework properly. You can write integration tests for the controllers by booting the
 framework and requesting the controller you want to test.
 
+An example of an infrastructure layer folder structure:
+
+```
+src/
+    Infrastructure/
+        Doctrine/
+            Repository/
+                DoctrineInvoiceRepository.php (implements InvoiceRepository interface)
+            QueryRepository/
+                DoctrineInvoiceQueryRepository.php (implements InvoiceQueryRepository interface)
+        Symfony/
+            Command/
+                GenerateInvoicePdfCommand.php
+            Controller/
+                InvoiceListController.php
+            Security/
+                UserProvider.php
+        SendGrid/
+            SendGridRestClient.php
+```
+
 ### Advantages
 
 There are many advantages to having a clear separation between these layers. Not only will the code be easier to
@@ -168,3 +234,5 @@ a deep dive into:
 - How to use the infrastructure layer to integrate with your framework, databases, and external systems
 
 These blog posts will come with code samples showing the different parts of the systems to give you a more clear view.
+
+Feel free to ask me any questions, below in the comments section.
